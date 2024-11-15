@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "moisture_hackeo"
+version = "0.1.0"
+description = "Repo for HackEO project, where we measure moisture in the soil"
+authors = ["Wojciech Adamczyk <wadamczyk@phys.ethz.ch>"]
+
+[tool.poetry.dependencies]
+python = "^3.10,<3.12"
+matplotlib = "^3.8.1"
+tqdm = "^4.66.5"
+requests = "^2.32.3"
+scipy = "^1.14.1"
+pandas = "^2.2.3"
+glob2 = "^0.7"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.tox
+  | venv
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black" 
